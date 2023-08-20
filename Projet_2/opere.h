@@ -1,6 +1,6 @@
-#pragma once
+п»ї#pragma once
 
 #include "Biblioteca.h"
 
-// Библиотека произведений
+// Р‘РёР±Р»РёРѕС‚РµРєР° РїСЂРѕРёР·РІРµРґРµРЅРёР№
 static std::vector<Opera*> _TutteOpere;

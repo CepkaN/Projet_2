@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<iostream>
 #include<vector>
 #include"Opera.h"
@@ -15,25 +15,25 @@ public:
 	~Studente(){}
 	friend Opera* Biblioteca::CercareAutore();
 
-	// Вывод произведения студента
+	// Р’С‹РІРѕРґ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ СЃС‚СѓРґРµРЅС‚Р°
 	void MostraOpus();
 
-	// Добавляет автора к списку студента
+	// Р”РѕР±Р°РІР»СЏРµС‚ Р°РІС‚РѕСЂР° Рє СЃРїРёСЃРєСѓ СЃС‚СѓРґРµРЅС‚Р°
 	void AddOpus();
 
-	// то же самое
+	// С‚Рѕ Р¶Рµ СЃР°РјРѕРµ
 	void AddOpus(Opera&op);
 
-	// Дает ссылку на произведение
+	// Р”Р°РµС‚ СЃСЃС‹Р»РєСѓ РЅР° РїСЂРѕРёР·РІРµРґРµРЅРёРµ
 	void GetAdresse();
 
-	// Имя
+	// РРјСЏ
 	std::string GetnameStudente();
 
-	// Пароль
+	// РџР°СЂРѕР»СЊ
 	std::string Getparola();
 
-	// Удаление произведения
+	// РЈРґР°Р»РµРЅРёРµ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	void RimOpus();
 };
 

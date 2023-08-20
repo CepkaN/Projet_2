@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 #include"Biblioteca.h"
 #include"Studente.h"
 #include"Bibliotecario.h"
@@ -9,16 +9,16 @@
 #include <conio.h> 
 #include <mmsystem.h>
 
-// список студентов
+// СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ
 std::vector<Studente*>_tuttiStudenti;
-// один библиотекарь
+// РѕРґРёРЅ Р±РёР±Р»РёРѕС‚РµРєР°СЂСЊ
 Bibliotecario* bibliotecario = new Bibliotecario();
 
-char menuva[3][35] = { "1. Посмотреть список композиторов ","2. Войти в аккаунт                ","3. Выход                          " };
-char menuva1[5][35] = { "1. Добавить произведение          ","2. Убрать произведение            ","3. Просмотреть список             ",
-	"4. Получить произведение          ","5. Выйти из аккаунта              " };
-char menuva2[5][35] = { "1. Добавить произведение          ","2. Удалить произведение           ","3. Просмотр списка студентов      ",
-"4. Просмотреть список             ","5. Выйти из аккаунта              " };
+char menuva[3][35] = { "1. РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРїРёСЃРѕРє РєРѕРјРїРѕР·РёС‚РѕСЂРѕРІ ","2. Р’РѕР№С‚Рё РІ Р°РєРєР°СѓРЅС‚                ","3. Р’С‹С…РѕРґ                          " };
+char menuva1[5][35] = { "1. Р”РѕР±Р°РІРёС‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёРµ          ","2. РЈР±СЂР°С‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёРµ            ","3. РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРїРёСЃРѕРє             ",
+	"4. РџРѕР»СѓС‡РёС‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёРµ          ","5. Р’С‹Р№С‚Рё РёР· Р°РєРєР°СѓРЅС‚Р°              " };
+char menuva2[5][35] = { "1. Р”РѕР±Р°РІРёС‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёРµ          ","2. РЈРґР°Р»РёС‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёРµ           ","3. РџСЂРѕСЃРјРѕС‚СЂ СЃРїРёСЃРєР° СЃС‚СѓРґРµРЅС‚РѕРІ      ",
+"4. РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРїРёСЃРѕРє             ","5. Р’С‹Р№С‚Рё РёР· Р°РєРєР°СѓРЅС‚Р°              " };
 
 enum color { Black, Blue, Green, Cyan, Red, Magenta, Brown, LightGray, DarkGray, LightBlue, LightGreen, LightCyan, LightRed, LightMagenta, Yellow, White };
 HANDLE okno = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -28,12 +28,12 @@ enum Napravlenie { Up = 72, Left = 75, Right = 77, Down = 80, Enter = 13, Esc = 
 void setColor(color text, color zalivka) {
 	SetConsoleTextAttribute(okno, (WORD)((zalivka << 4) | text));
 }
-// расположение курсора
+// СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР°
 void nacialo(int x, int y) {
 	COORD koord = { x,y };
 	SetConsoleCursorPosition(okno, koord);
 }
-// покраска меню студента
+// РїРѕРєСЂР°СЃРєР° РјРµРЅСЋ СЃС‚СѓРґРµРЅС‚Р°
 void pokraska(char var[5][35], int T) {
 	for (int i = 0; i < 5; i++) {
 		nacialo(20, 6 + i);
@@ -47,7 +47,7 @@ void pokraska(char var[5][35], int T) {
 		}
 	}
 }
-// покраски главного меню
+// РїРѕРєСЂР°СЃРєРё РіР»Р°РІРЅРѕРіРѕ РјРµРЅСЋ
 void pokraska1(char var[3][35], int T) {
 	for (int i = 0; i < 3; i++) {
 		nacialo(20, 6 + i);
@@ -61,7 +61,7 @@ void pokraska1(char var[3][35], int T) {
 		}
 	}
 }
-// покраска меню библиотекаря
+// РїРѕРєСЂР°СЃРєР° РјРµРЅСЋ Р±РёР±Р»РёРѕС‚РµРєР°СЂСЏ
 void pokraska2(char var[5][35], int T) {
 	for (int i = 0; i < 5; i++) {
 		nacialo(20, 6 + i);
@@ -75,17 +75,17 @@ void pokraska2(char var[5][35], int T) {
 		}
 	}
 }
-// меню студента
+// РјРµРЅСЋ СЃС‚СѓРґРµРЅС‚Р°
 void Menu1(Studente* st) {
 	int klava1 = 0, y1 = 0, change1 = 0, klava7 = 0;
 	system("cls");
 	setColor(White, Black);
 	nacialo(30, 4);
-	std::cout << " АККАУНТ СТУДЕНТА ";
+	std::cout << " РђРљРљРђРЈРќРў РЎРўРЈР”Р•РќРўРђ ";
 	pokraska(menuva1, change1);
 	do
 	{
-		klava1 = _getch(); // выбор позиции.
+		klava1 = _getch(); // РІС‹Р±РѕСЂ РїРѕР·РёС†РёРё.
 		switch (klava1)
 		{
 		case Up:y1--;
@@ -136,17 +136,17 @@ void Menu1(Studente* st) {
 	}
 	Menu1(st);
 }
-//меню библиотекаря
+//РјРµРЅСЋ Р±РёР±Р»РёРѕС‚РµРєР°СЂСЏ
 void Menu2() {
 	int change2 = 0, y2 = 0, klava2 = 0, klava7 = 0;
 	system("cls");
 	setColor(White, Black);
 	nacialo(25, 4);
-	std::cout << " АККАУНТ БИБЛИОТЕКАРЯ ";
+	std::cout << " РђРљРљРђРЈРќРў Р‘РР‘Р›РРћРўР•РљРђР РЇ ";
 	pokraska2(menuva2, change2);
 	do
 	{
-		klava2 = _getch(); // выбор позиции.
+		klava2 = _getch(); // РІС‹Р±РѕСЂ РїРѕР·РёС†РёРё.
 		switch (klava2)
 		{
 		case Up:y2--;
@@ -162,7 +162,7 @@ void Menu2() {
 		do
 		{
 			system("cls");
-			bibliotecario->AddBiblio();
+			bibliotecario->AddBiblio();  // Р’РѕС‚ СЌС‚Рѕ РЅРµ СЂР°Р±РѕС‚Р°РµС‚, РЅСѓ Рё Р»Р°РґРЅРѕ...
 			bibliotecario->AddAutore();
 			klava7 = _getch();
 		} while (klava7 != Enter);
@@ -200,21 +200,21 @@ void Menu2() {
 	}
 	Menu2();
 }
-// главное меню
+// РіР»Р°РІРЅРѕРµ РјРµРЅСЋ
 void Menu() {
 
-	// значение клавиши, меняемое значение, итоговое значение. Для интерфейса меню.
+	// Р·РЅР°С‡РµРЅРёРµ РєР»Р°РІРёС€Рё, РјРµРЅСЏРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ, РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ. Р”Р»СЏ РёРЅС‚РµСЂС„РµР№СЃР° РјРµРЅСЋ.
 	int klava = 0, y = 0, change = 0, change3 = 0, y3 = 0, klava7 = 0;
 	char t = 'f';
 	char u = 'f';
 	system("cls");
 	setColor(White, Black);
 	nacialo(30, 4);
-	std::cout << "НОТНАЯ БИБЛИОТЕКА";
+	std::cout << "РќРћРўРќРђРЇ Р‘РР‘Р›РРћРўР•РљРђ";
 	pokraska1(menuva, change);
 	do
 	{
-		klava = _getch(); // выбор позиции.
+		klava = _getch(); // РІС‹Р±РѕСЂ РїРѕР·РёС†РёРё.
 		switch (klava)
 		{
 		case Up:y--;
@@ -238,22 +238,22 @@ void Menu() {
 	else if (change == 1) {
 		system("cls");
 		std::string nome, parol;
-		std::cout << "Введите логин : ";
+		std::cout << "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ : ";
 		std::cin >> nome;
-		std::cout << "\nВведите пароль : "; std::cin >> parol;
+		std::cout << "\nР’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ : "; std::cin >> parol;
 		if (nome == bibliotecario->GetnameBibliotecario() && parol == bibliotecario->GetparoleBiblio()) {
-			// Вызывается меню библиотекаря.
+			// Р’С‹Р·С‹РІР°РµС‚СЃСЏ РјРµРЅСЋ Р±РёР±Р»РёРѕС‚РµРєР°СЂСЏ.
 			Menu2();
 		}
 		else {
 			Studente* st = new Studente(nome, parol);
 			for (auto& i : _tuttiStudenti) {
 				if (i->GetnameStudente() == st->GetnameStudente() && i->Getparola() == st->Getparola()) {
-					// Вызывается меню студента.
+					// Р’С‹Р·С‹РІР°РµС‚СЃСЏ РјРµРЅСЋ СЃС‚СѓРґРµРЅС‚Р°.
 					Menu1(i);
 				}
 				else {
-					std::cout << "Вы не зарегистрированы в библиотеке .";
+					std::cout << "Р’С‹ РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹ РІ Р±РёР±Р»РёРѕС‚РµРєРµ .";
 				}
 			}
 		}
@@ -266,12 +266,10 @@ void Menu() {
 	}
 	Menu();
 }
-//void Menu1();
-//void Menu2();
 
 
 
-Opera* opera1 = new Opera("Alexandrov", { {"Sonata op.19","https://piano.ru/scores/alex/alex-son.pdf"},{"Etude op.31 №2","https://piano.ru/scores/alex/alex-et-31-2.pdf"}});
+Opera* opera1 = new Opera("Alexandrov", { {"Sonata op.19","https://piano.ru/scores/alex/alex-son.pdf"},{"Etude op.31 в„–2","https://piano.ru/scores/alex/alex-et-31-2.pdf"}});
 Opera* opera2 = new Opera("Balakirev", { {"Islamei","https://piano.ru/scores/balakirev/bal-is.pdf"} });
 Opera* opera3 = new Opera("Glinka", { {"Ruslan e Ljudmila","https://piano.ru/gl-rus.html"},{"Ivan Susanin","https://piano.ru/gl-zhizn.html"}});
 Opera* opera4 = new Opera("Ljadov", { {"2 Mazurke per pianoforte, Op. 15","https://piano.ru/scores/liadov/liadov-15.pdf"} });

@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<iostream>
 #include<map>
 #include<vector>
@@ -14,13 +14,13 @@ public:
 	Opera(std::string nome, std::map<std::string, std::string> titolo);
 	~Opera(){}
 
-	// Показывает имя композитора
+	// РџРѕРєР°Р·С‹РІР°РµС‚ РёРјСЏ РєРѕРјРїРѕР·РёС‚РѕСЂР°
 	std::string OttenereNomeAutore();
 
-	// Предоставляет список произведений
+	// РџСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ СЃРїРёСЃРѕРє РїСЂРѕРёР·РІРµРґРµРЅРёР№
 	std::map<std::string, std::string> Gettitolo();
 
-	// Выводит названия произведений
+	// Р’С‹РІРѕРґРёС‚ РЅР°Р·РІР°РЅРёСЏ РїСЂРѕРёР·РІРµРґРµРЅРёР№
 	void MostraOpera();
 
 	Opera operator=(Opera&op) {

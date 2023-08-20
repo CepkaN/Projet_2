@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include"Biblioteca.h"
 #include<string>
@@ -17,19 +17,19 @@ public:
 	Bibliotecario(){}
 	~Bibliotecario(){}
 	
-	// Имя
+	// РРјСЏ
 	std::string GetnameBibliotecario();
 
-	// Пароль
+	// РџР°СЂРѕР»СЊ
 	std::string GetparoleBiblio();
 
-	// Удаление произведения
+	// РЈРґР°Р»РµРЅРёРµ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	void RimBiblio();
 
-	// Добавление произведения
+	// Р”РѕР±Р°РІР»РµРЅРёРµ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	void AddBiblio();
 
-	// Показывает список студентов
+	// РџРѕРєР°Р·С‹РІР°РµС‚ СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ
 	void MostraStudenti();
 };
 

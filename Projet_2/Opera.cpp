@@ -1,4 +1,4 @@
-#include "Opera.h"
+﻿#include "Opera.h"
 
 Opera::Opera(std::string nome, std::map<std::string, std::string> titolo):_nomeAutore(nome),_titolo(titolo){}
 

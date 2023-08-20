@@ -1,4 +1,4 @@
-#include "Bibliotecario.h"
+ï»¿#include "Bibliotecario.h"
 
 std::string Bibliotecario::GetnameBibliotecario()
 {
@@ -12,7 +12,7 @@ std::string Bibliotecario::GetparoleBiblio()
 
 void Bibliotecario::RimBiblio()
 {
-	std::cout << " Ââåäèòå èìÿ êîìïîçèòîðà : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÐºÐ¾Ð¼Ð¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð° : ";
 	std::string nome;
 	std::cin >> nome;
 	Biblioteca::RimAuBibl(nome);
@@ -21,12 +21,12 @@ void Bibliotecario::RimBiblio()
 void Bibliotecario::AddBiblio()
 {
 	std::string nome, lavoro, site;
-	std::cout << " Ââåäèòå èìÿ êîìïîçèòîðà : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÐºÐ¾Ð¼Ð¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð° : ";
 	std::cin >> nome;
-	std::cout << " Ââåäèòå íàçâàíèå ïðîèçâåäåíèÿ : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ : ";
 	std::cin.ignore();
 	std::getline(std::cin,lavoro);
-	std::cout << " Ââåäèòå àäðåñ : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°Ð´Ñ€ÐµÑ : ";
 	std::cin >> site;
 
 	Opera* oper = new Opera(nome, { {lavoro,site} });

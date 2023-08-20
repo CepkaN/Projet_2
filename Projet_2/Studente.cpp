@@ -1,4 +1,4 @@
-#include "Studente.h"
+ï»¿#include "Studente.h"
 
 Studente::Studente(std::string nameS, std::string par):_nameStudente(nameS),_parola(par){}
 
@@ -35,7 +35,7 @@ void Studente::GetAdresse()
 		std::cout << '\n';
 	}
 	int n = 0;
-	std::cout << "Ââåäèòå íîìåð ïðîèçâåäåíèÿ : ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ : ";
 	std::cin >> n;
 	
 	for (auto& it1 : _opusStudente) {
@@ -66,7 +66,7 @@ void Studente::RimOpus()
 	for (auto& it6 : _opusStudente) {
 		std::cout << ++a << "\t"<< it6->OttenereNomeAutore()<<'\n';
 	}
-	std::cout << " Ââåäèòå íîìåð äëÿ óäàëåíèÿ : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ : ";
 	std::cin >> b;
 	b--;
 	_opusStudente.erase(_opusStudente.begin() + b);

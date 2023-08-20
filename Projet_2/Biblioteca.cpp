@@ -1,4 +1,4 @@
-#include "Biblioteca.h"
+ï»¿#include "Biblioteca.h"
 
 
 
@@ -15,7 +15,7 @@ void Biblioteca::AddAutore()
 
 void Biblioteca::MostraAutore()
 {
-	std::cout << " Äîñòóïíû ïðîèçâåäåíèÿ òàêèõ êîìïîçèòîðîâ : " << '\n';
+	std::cout << " Ð”Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ Ñ‚Ð°ÐºÐ¸Ñ… ÐºÐ¾Ð¼Ð¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¾Ð² : " << '\n';
 	for (auto& i : _nomeAutoreDiOp) {
 		std::cout << i << '\n';
 	}
@@ -23,7 +23,7 @@ void Biblioteca::MostraAutore()
 
 Opera* Biblioteca::CercareAutore()
 {
-	std::cout << " Ââåäèòå èìÿ êîìïîçèòîðà : ";
+	std::cout << " Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÐºÐ¾Ð¼Ð¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð° : ";
 	std::string nome;
 	std::cin >> nome;
 	
@@ -34,7 +34,7 @@ Opera* Biblioteca::CercareAutore()
 			return it4 = it3;
 		}
 	}
-	std::cout << " Âàøåãî àâòîðà íåò â ñïèñêå ."; return nullptr;
+	std::cout << " Ð’Ð°ÑˆÐµÐ³Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð° Ð½ÐµÑ‚ Ð² ÑÐ¿Ð¸ÑÐºÐµ ."; return nullptr;
 }
 
 void Biblioteca::RimAuBibl(std::string str)
@@ -43,11 +43,11 @@ void Biblioteca::RimAuBibl(std::string str)
 	for (auto& it3 : _TutteOpere) {
 		if (it3->OttenereNomeAutore() == str) {
 			_TutteOpere.erase(_TutteOpere.begin() + a); 
-			std::cout << " Àâòîð óäàë¸í \n"; return;
+			std::cout << " ÐÐ²Ñ‚Ð¾Ñ€ ÑƒÐ´Ð°Ð»Ñ‘Ð½ \n"; return;
 		}
 		++a;
 	}
-	std::cout << " Îøèáêà \n";
+	std::cout << " ÐžÑˆÐ¸Ð±ÐºÐ° \n";
 }
 void Biblioteca::MostraB()
 {
