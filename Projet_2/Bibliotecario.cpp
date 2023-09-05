@@ -1,5 +1,14 @@
 ﻿#include "Bibliotecario.h"
 
+Bibliotecario* Bibliotecario:: _instance = 0;
+
+Bibliotecario* Bibliotecario::instance()
+{
+	if (!_instance)
+		_instance = new Bibliotecario;
+	return _instance;
+}
+
 std::string Bibliotecario::GetnameBibliotecario()
 {
 	return _nameBibliotecario;

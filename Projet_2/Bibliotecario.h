@@ -13,8 +13,17 @@ class Bibliotecario :public Biblioteca
 private:
 	std::string _nameBibliotecario = "Bibliotecario";
 	std::string _paroleBiblio = "BIBLIOTECA";
+
+	static Bibliotecario* _instance;
+protected:
+	Bibliotecario() {}
+
 public:
-	Bibliotecario(){}
+	
+	Bibliotecario(const Bibliotecario&) = delete;
+	const Bibliotecario& operator=(const Bibliotecario&) = delete;
+	static Bibliotecario* instance();
+
 	~Bibliotecario(){}
 	
 	// Имя

@@ -12,7 +12,7 @@
 // список студентов
 std::vector<Studente*>_tuttiStudenti;
 // один библиотекарь
-Bibliotecario* bibliotecario = new Bibliotecario();
+auto bibliotecario = Bibliotecario::instance();
 
 char menuva[3][35] = { "1. Посмотреть список композиторов ","2. Войти в аккаунт                ","3. Выход                          " };
 char menuva1[5][35] = { "1. Добавить произведение          ","2. Убрать произведение            ","3. Просмотреть список             ",
